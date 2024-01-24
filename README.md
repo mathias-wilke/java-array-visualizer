@@ -7,5 +7,9 @@ The ArrayVisualizer project offers an intuitive Java-based tool, primarily desig
 - **Visualize 2D Boolean Arrays**: Represents two-dimensional boolean arrays as black and white grids, suitable for pattern recognition and algorithm demonstration.
 - **Easy Integration**: Designed to be easily incorporated into other Java projects or educational materials to enhance learning experiences.
 
+## Example Outputs:
+![Example1](array-visualizer-1d-int.png?raw=true)
+![Example1](array-visualizer-2d-boolean.png?raw=true)
+
 ## Ideal for Education:
 ArrayVisualizer is a perfect aid for teaching complex programming concepts in a visually engaging way. It brings arrays and algorithms to life, making it easier for students to grasp the mechanics of sorting, data structuring, and algorithm efficiency.
