@@ -63,14 +63,22 @@ public class ArrayVisualizer extends JFrame {
      * 
      * @param g the Graphics object used for drawing
      */
-    private void drawIntArray(Graphics g) {
-        int heightUnits = getHeight() / this.max(array);
+     private void drawIntArray(Graphics g) {
+        double heightUnits = ((double)(getHeight() - getInsets().top)) / (double)this.max(array);
     	
+        System.out.println(getInsets().top);
+        System.out.println(heightUnits);
+        
     	int width = getWidth() / array.length;
         for (int i = 0; i < array.length; i++) {
-            int height =  heightUnits * array[i];
+            int height =  (int)(heightUnits * array[i]);
             g.fillRect(i * width, getHeight() - height, width, height);
         }
+        
+        g.setColor(Color.RED);
+        int y = getInsets().top;
+        //g.fillRect(0, y , getWidth(), getHeight() - y);
+        g.setColor(Color.BLACK);
     }
 
     /**
