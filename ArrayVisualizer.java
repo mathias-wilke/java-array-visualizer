@@ -63,12 +63,22 @@ public class ArrayVisualizer extends JFrame {
      * 
      * @param g the Graphics object used for drawing
      */
-    private void drawIntArray(Graphics g) {
-        int width = getWidth() / array.length;
+     private void drawIntArray(Graphics g) {
+        double heightUnits = ((double)(getHeight() - getInsets().top)) / (double)this.max(array);
+    	
+        System.out.println(getInsets().top);
+        System.out.println(heightUnits);
+        
+    	int width = getWidth() / array.length;
         for (int i = 0; i < array.length; i++) {
-            int height = array[i];
+            int height =  (int)(heightUnits * array[i]);
             g.fillRect(i * width, getHeight() - height, width, height);
         }
+        
+        g.setColor(Color.RED);
+        int y = getInsets().top;
+        //g.fillRect(0, y , getWidth(), getHeight() - y);
+        g.setColor(Color.BLACK);
     }
 
     /**
@@ -87,4 +97,14 @@ public class ArrayVisualizer extends JFrame {
             }
         }
     }
+
+    private int max(int[] array) {
+		int max = Integer.MIN_VALUE;
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] > max) {
+				max = array[i];
+			}
+		}
+		return max;
+	}
 }
